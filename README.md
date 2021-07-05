@@ -6,7 +6,7 @@ Link: https://inspirateur.github.io/DnD-Hit-count/
 
 ## How it works
 
-Basically the insight is:
+Basically the insight is:  
 The distribution of the sum of n independant variables of law P is the convolution of P times itself n times  
 https://en.wikipedia.org/wiki/Convolution_of_probability_distributions
 
