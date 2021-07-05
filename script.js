@@ -18,10 +18,9 @@ function make_kernel(dice, hitchance) {
 
 function distrib(hp, dice, hitchance) {
     let pyramid = convolve(make_kernel(dice, hitchance), hp);
-    console.log(pyramid);
     let probs = [];
     for (const row of pyramid) {
-        probs.push(range(Math.max(0, hp - dice), hp).map(i => (row[i] * (1 + (i + 1 - hp) / dice))).reduce((a, b) => a + b, 0));
+        probs.push(range(Math.max(0, hp - dice), hp).map(i => (row[i] * (1 + (i + 1 - hp) / dice))).reduce((a, b) => a + b, 0) * 100);
     }
     return probs;
 }
@@ -30,5 +29,5 @@ function compute() {
     let hp = parseInt(document.getElementById("hp").value);
     let dice = parseInt(document.getElementById("dice").value);
     let hit = parseInt(document.getElementById("hit").value) / 100;
-    console.log(distrib(hp, dice, hit));
+    hist("barchart", distrib(hp, dice, hit));
 }

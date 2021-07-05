@@ -18,3 +18,32 @@ function fillArray(value, len) {
     if (a.length < len) a = a.concat(a.slice(0, len - a.length));
     return a;
 }
+
+function hist(html_id, data) {
+    let ctx = document.getElementById(html_id).getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: range(data.length),
+            datasets: [{
+                label: 'turns',
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.4)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            responsive: false
+        }
+    });
+}
