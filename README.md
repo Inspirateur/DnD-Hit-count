@@ -1,5 +1,5 @@
 # DnD-Hit-count
-Webpage that solves this reddit post:
+Webpage that solves this reddit post:  
 https://www.reddit.com/r/3Blue1Brown/comments/o4o6zx/probability_distributions_for_dice/
 
 Link: https://inspirateur.github.io/DnD-Hit-count/
