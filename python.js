@@ -26,7 +26,7 @@ function hist(html_id, data) {
         data: {
             labels: range(data.length),
             datasets: [{
-                label: 'turns',
+                label: '%',
                 data: data,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.4)'
