@@ -18,8 +18,8 @@ Using this we can solve the problem following these steps:
   - convolve the damage distribution t times to get the distribution of inflicted damages at turn t
   - compute the probability of the mob being dead by simply summing the distribution from dammages >= HP
 
-this gives you a cumulative distribution, representing the probability of the mob being dead at each turn.
-It can then easily be converted to a discrete distribution for plotting.
+this gives you the **cumulative** distribution of the mob death turn, representing the probability of the mob being dead at each turn.
+It can then easily be converted to the distribution of the mob death turn for plotting.
 
 
 *Special thanks to Denis Périce (denis.perice@ens-lyon.fr) for helping out with the maths !*
