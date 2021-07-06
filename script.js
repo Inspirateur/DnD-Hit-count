@@ -1,31 +1,35 @@
-function convolve(kernel, n) {
-    cumul = [kernel.concat(fillArray(0, n - kernel.length))];
+function* convolve_iter(kernel, max_i) {
+    last_row = kernel.slice();
     kernel = kernel.reverse();
-    for (const t of range(1, n)) {
+    while (true) {
+        yield last_row;
         row = [];
-        for (const i of range(n)) {
-            let val = range(0, Math.min(i + 1, kernel.length)).map(j => cumul[t - 1][i - j] * kernel[kernel.length - j - 1]).reduce((a, b) => a + b, 0);
+        let val;
+        for (const i in range(max_i)) {
+            val = sum(range(min(i + 1, kernel.length)).map(j => (last_row[i - j] || 0) * kernel[kernel.length - j - 1]));
             row.push(val);
         }
-        cumul.push(row);
+        last_row = row;
     }
-    return cumul;
 }
 
 function make_kernel(dice, hitchance) {
-    return [hitchance].concat(fillArray((1 - hitchance) / dice, dice));
+    return [1 - hitchance].concat(fillArray((hitchance) / dice, dice));
 }
 
 function distrib(hp, dice, hitchance) {
-    let dammages = convolve(make_kernel(dice, hitchance), Math.floor(hp * (1 / hitchance)));
-    let cump = [0];
-    let dist = [0];
+    const dammages_per_turn = convolve_iter(make_kernel(dice, hitchance), hp);
+    let cump = [];
+    let dist = [];
     let last_total = 0;
-    for (const row of dammages) {
-        let total = (1 - range(0, hp).map(i => row[i]).reduce((a, b) => a + b, 0)) * 100;
-        cump.push(total);
-        let diff = Math.abs(total - last_total);
-        dist.push(diff < 0.0001 ? 0 : diff);
+    // we generate the next turn until the mob is >=99% dead
+    while (last_total < 99) {
+        let dammages = dammages_per_turn.next().value;
+        // apparently positive float can just become negative due to precision errors in javascript 
+        let total = abs(1 - sum(range(min(hp - 1, dammages.length)).map(i => dammages[i]))) * 100;
+        cump.push(total < 0.01 ? 0 : total);
+        let diff = abs(total - last_total);
+        dist.push(diff < 0.01 ? 0 : diff);
         last_total = total;
     }
     return [dist, cump];
@@ -35,7 +39,12 @@ function compute() {
     let hp = parseInt(document.getElementById("hp").value);
     let dice = parseInt(document.getElementById("dice").value);
     let hit = parseInt(document.getElementById("hit").value) / 100;
+    if (hit < .01) {
+        hit = .01;
+        document.getElementById("hit").value = "1";
+    }
     let [dist, cump] = distrib(hp, dice, hit)
-    hist("dist", dist);
-    hist("cump", cump);
+    labels = range(dist.length).map(i => i + 1);
+    hist("dist", dist, labels);
+    hist("cump", cump, labels);
 }

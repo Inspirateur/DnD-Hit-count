@@ -26,6 +26,7 @@ button {
 
 button:hover {
     cursor: pointer;
+    background-color: #2C2F33;
 }
 
 button:active {

@@ -18,3 +18,6 @@ Using this we can solve the problem following these steps:
 
 this gives you a cumulative distribution, representing the probability of the mob being dead at each turn.
 It can then easily be converted to a discrete distribution for plotting.
+
+
+*Special thanks to Denis Périce (denis.perice@ens-lyon.fr) for helping out with the maths !*

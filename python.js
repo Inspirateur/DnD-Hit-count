@@ -11,6 +11,18 @@ function range(a, b = null) {
     return [...Array(end - start).keys()].map(i => i + start);
 }
 
+function sum(it) {
+    return it.reduce((a, b) => a + b, 0);
+}
+
+function min(...values) {
+    return Math.min(...values);
+}
+
+function abs(value) {
+    return Math.abs(value);
+}
+
 function fillArray(value, len) {
     if (len == 0) return [];
     var a = [value];
@@ -21,7 +33,7 @@ function fillArray(value, len) {
 
 let _hists = {};
 
-function hist(html_id, data) {
+function hist(html_id, data, labels = null) {
     let ctx = document.getElementById(html_id).getContext('2d');
     let handle;
     if (html_id in _hists) {
@@ -30,10 +42,13 @@ function hist(html_id, data) {
         handle = new Chart(ctx, {});
     }
     handle.destroy();
+    if (labels === null) {
+        labels = range(data.length)
+    }
     handle = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: range(data.length),
+            labels: labels,
             datasets: [{
                 label: '%',
                 data: data,
