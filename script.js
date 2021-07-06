@@ -14,7 +14,7 @@ function* convolve_iter(kernel, max_i) {
 }
 
 function make_kernel(dice, hitchance) {
-    return [1 - hitchance].concat(fillArray((hitchance) / dice, dice));
+    return [1 - hitchance].concat(new Array(dice).fill(hitchance / dice));
 }
 
 function distrib(hp, dice, hitchance) {
@@ -45,6 +45,6 @@ function compute() {
     }
     let [dist, cump] = distrib(hp, dice, hit)
     labels = range(dist.length).map(i => i + 1);
-    hist("dist", dist, "Will it die on this exact roll ?", labels);
-    hist("cump", cump, "Will it be dead on this roll ?", labels);
+    hist("dist", dist, "Will it die exactly on this turn ?", labels);
+    hist("cump", cump, "Will it be dead on this turn ?", labels);
 }
