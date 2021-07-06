@@ -4,7 +4,7 @@ How much roll will you need to kill a mob ?
 context:
 https://www.reddit.com/r/3Blue1Brown/comments/o4o6zx/probability_distributions_for_dice/
 
-Link: https://inspirateur.github.io/DnD-Hit-count/
+Interactive demo: https://inspirateur.github.io/DnD-Hit-count/
 
 ## How it works
 
