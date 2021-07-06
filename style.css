@@ -50,11 +50,20 @@ button:active {
     border: solid #99AAB5 1px;
 }
 
-div {
+.viz {
     display: flex;
+	flex-wrap: wrap;
+	margin: 2em 0;
 }
 
-canvas {
-    margin-top: 2em;
-    margin-right: 2em;
+.chart-container {
+	max-width: 400px;
+	width: 100%;
+	margin: 0 1em;
+}
+.chart-container:first-child {
+	margin-left: 0;
+}
+.chart-container:last-child {
+	margin-right: 0;
 }

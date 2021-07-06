@@ -78,7 +78,7 @@ function hist(html_id, data, title, labels = null) {
                     }
                 }
             },
-            responsive: false
+            aspectRatio: 1
         }
     });
     _hists[html_id] = handle;
