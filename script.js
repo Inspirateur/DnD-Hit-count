@@ -26,7 +26,7 @@ function distrib(hp, dice, hitchance) {
     while (last_total < 99) {
         let dammages = dammages_per_turn.next().value;
         // apparently positive float can just become negative due to precision errors in javascript 
-        let total = abs(1 - sum(range(min(hp - 1, dammages.length)).map(i => dammages[i]))) * 100;
+        let total = abs(1 - sum(range(min(hp, dammages.length)).map(i => dammages[i]))) * 100;
         cump.push(total < 0.01 ? 0 : total);
         let diff = abs(total - last_total);
         dist.push(diff < 0.01 ? 0 : diff);
