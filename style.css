@@ -1,7 +1,35 @@
 body {
     font-family: sans-serif;
     color: white;
-    background-color: #2A2D32;
+    background-color: #2C2F33;
+}
+
+input {
+    color: white;
+    background-color: #23272A;
+    height: 20px;
+    width: 80px;
+    font-size: large;
+    margin-right: 1em;
+    outline: none;
+    border: solid #99AAB5 1px;
+    border-radius: 5px;
+}
+
+button {
+    color: white;
+    background-color: #23272A;
+    height: 30px;
+    border: outset #99AAB5 2px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    border: solid #99AAB5 1px;
 }
 
 div {
