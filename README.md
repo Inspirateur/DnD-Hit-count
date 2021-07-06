@@ -1,5 +1,5 @@
 # DnD-Hit-count
-How much roll will you need to kill a mob ?
+How much rolls will you need to kill a mob ?
 
 context:
 https://www.reddit.com/r/3Blue1Brown/comments/o4o6zx/probability_distributions_for_dice/
