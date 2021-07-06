@@ -45,6 +45,6 @@ function compute() {
     }
     let [dist, cump] = distrib(hp, dice, hit)
     labels = range(dist.length).map(i => i + 1);
-    hist("dist", dist, labels);
-    hist("cump", cump, labels);
+    hist("dist", dist, "Will it die on this exact roll ?", labels);
+    hist("cump", cump, "Will it be dead after this roll ?", labels);
 }

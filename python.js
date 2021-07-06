@@ -33,7 +33,7 @@ function fillArray(value, len) {
 
 let _hists = {};
 
-function hist(html_id, data, labels = null) {
+function hist(html_id, data, title, labels = null) {
     let ctx = document.getElementById(html_id).getContext('2d');
     let handle;
     if (html_id in _hists) {
@@ -65,6 +65,11 @@ function hist(html_id, data, labels = null) {
             plugins: {
                 legend: {
                     labels: { color: "white" }
+                },
+                title: {
+                    display: true,
+                    color: "white",
+                    text: title
                 }
             },
             scales: {

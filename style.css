@@ -4,22 +4,39 @@ body {
     background-color: #2C2F33;
 }
 
+h1 {
+    margin-bottom: 1em;
+}
+
 input {
     color: white;
     background-color: #23272A;
     height: 20px;
-    width: 80px;
     font-size: large;
-    margin-right: 1em;
     outline: none;
-    border: solid #99AAB5 1px;
-    border-radius: 5px;
+    border: none;
+    border-bottom: solid white 1px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 button {
     color: white;
     background-color: #23272A;
     height: 30px;
+    margin-left: 1em;
     border: outset #99AAB5 2px;
     border-radius: 5px;
 }
@@ -38,5 +55,6 @@ div {
 }
 
 canvas {
-    margin-right: 1em;
+    margin-top: 2em;
+    margin-right: 2em;
 }

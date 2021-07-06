@@ -4,15 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DnD Hit Count</title>
+    <title>How long to kill</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
 </head>
 
 <body>
+    <h1>How many rolls to kill a mob ?</h1>
     <!-- your content here... -->
-    HP: <input type="number" name="HP" value=10 id="hp">
-    Dice: <input type="number" name="Dice" value=3 id="dice">
-    Hit Chance%: <input type="number" name="Hit%" value=40 id="hit">
+    The mob has <input type="number" name="HP" value=9 id="hp" style="width: 35px"> HP, &nbsp;
+    I hit with 1 d<input type="number" name="Dice" value=3 id="dice" style="width: 25px"> &nbsp;
+    and I got a <input type="number" name="Hit%" value=60 id="hit" style="width: 25px">% hit chance
     <button type="button" onclick="compute()">Compute</button>
     <div>
         <canvas width="400" height="400" id="dist"></canvas>
