@@ -19,9 +19,18 @@ function fillArray(value, len) {
     return a;
 }
 
+let _hists = {};
+
 function hist(html_id, data) {
     let ctx = document.getElementById(html_id).getContext('2d');
-    let myChart = new Chart(ctx, {
+    let handle;
+    if (html_id in _hists) {
+        handle = _hists[html_id];
+    } else {
+        handle = new Chart(ctx, {});
+    }
+    handle.destroy();
+    handle = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: range(data.length),
@@ -29,21 +38,35 @@ function hist(html_id, data) {
                 label: '%',
                 data: data,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.4)'
+                    'rgba(99, 132, 255, 0.4)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)'
+                    'rgba(99, 132, 255, 1)'
                 ],
                 borderWidth: 1
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                    labels: { color: "white" }
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true
+                    ticks: {
+                        beginAtZero: true,
+                        color: "white"
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: "white"
+                    }
                 }
             },
             responsive: false
         }
     });
+    _hists[html_id] = handle;
 }

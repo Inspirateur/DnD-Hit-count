@@ -5,17 +5,19 @@
 <head>
     <meta charset="utf-8">
     <title>DnD Hit Count</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
-        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- your content here... -->
     HP: <input type="number" name="HP" value=10 id="hp">
     Dice: <input type="number" name="Dice" value=3 id="dice">
-    Hit Chance: <input type="number" name="Hit%" value=40 id="hit">
-    <canvas width="400" height="400" id="barchart"></canvas>
+    Hit Chance%: <input type="number" name="Hit%" value=40 id="hit">
     <button type="button" onclick="compute()">Compute</button>
+    <div>
+        <canvas width="400" height="400" id="dist"></canvas>
+        <canvas width="400" height="400" id="cump"></canvas>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"
         integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

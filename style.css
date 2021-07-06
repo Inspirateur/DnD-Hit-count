@@ -1,3 +1,13 @@
-.bar {
-    fill: steelblue;
+body {
+    font-family: sans-serif;
+    color: white;
+    background-color: #2A2D32;
+}
+
+div {
+    display: flex;
+}
+
+canvas {
+    margin-right: 1em;
 }
