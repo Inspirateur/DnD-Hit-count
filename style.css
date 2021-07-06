@@ -50,8 +50,9 @@ button:active {
     border: solid #99AAB5 1px;
 }
 
-div {
+.viz {
     display: flex;
+	flex-wrap: wrap;
 }
 
 canvas {

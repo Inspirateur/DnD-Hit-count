@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <title>How long to kill</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="icon.png"/>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     I hit with 1 d<input type="number" name="Dice" value=3 id="dice" style="width: 25px"> &nbsp;
     and I got a <input type="number" name="Hit%" value=60 id="hit" style="width: 35px">% hit chance
     <button type="button" onclick="compute()">Compute</button>
-    <div>
+    <div class="viz">
         <canvas width="400" height="400" id="dist"></canvas>
         <canvas width="400" height="400" id="cump"></canvas>
     </div>
