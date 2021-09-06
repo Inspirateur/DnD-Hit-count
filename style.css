@@ -10,7 +10,7 @@ h1 {
 
 input {
     color: white;
-    background-color: #232528;
+    background-color: #1e2023;
     height: 20px;
     font-size: large;
     outline: none;
@@ -34,7 +34,7 @@ input[type=number] {
 
 button {
     color: white;
-    background-color: #232528;
+    background-color: #1e2023;
     height: 30px;
     margin-left: 1em;
     border: outset #99AAB5 2px;
