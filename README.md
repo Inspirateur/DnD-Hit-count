@@ -22,4 +22,4 @@ this gives you the **cumulative** distribution of the mob death turn, representi
 It can then easily be converted to the distribution of the mob death turn for plotting.
 
 
-*Special thanks to Denis Périce (denis.perice@ens-lyon.fr) for helping out with the maths !*
+*Special thanks to Denis Périce (http://perso.ens-lyon.fr/denis.perice/) for helping out with the maths !*
