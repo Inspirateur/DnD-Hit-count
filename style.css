@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     color: white;
-    background-color: #2C2F33;
+    background-color: #272A2D;
 }
 
 h1 {
@@ -10,7 +10,7 @@ h1 {
 
 input {
     color: white;
-    background-color: #23272A;
+    background-color: #232528;
     height: 20px;
     font-size: large;
     outline: none;
@@ -34,7 +34,7 @@ input[type=number] {
 
 button {
     color: white;
-    background-color: #23272A;
+    background-color: #232528;
     height: 30px;
     margin-left: 1em;
     border: outset #99AAB5 2px;
@@ -43,7 +43,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: #2C2F33;
+    background-color: #272A2D;
 }
 
 button:active {
